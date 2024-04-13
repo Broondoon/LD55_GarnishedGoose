@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5plvi2qyjlr4"]
+
+[ext_resource type="Texture2D" uid="uid://fkn5rdfeblep" path="res://assets/structures/content cow.png" id="1_vsoa2"]
+
+[node name="ContentCow" type="Sprite2D"]
+position = Vector2(236, 218)
+texture = ExtResource("1_vsoa2")

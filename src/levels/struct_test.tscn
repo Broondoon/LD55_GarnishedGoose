@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3txgu7buvfjf"]
+
+[ext_resource type="PackedScene" uid="uid://b5plvi2qyjlr4" path="res://src/structures/content_cow.tscn" id="1_heb3b"]
+[ext_resource type="PackedScene" uid="uid://da01nyox3t7xi" path="res://src/structures/phone_tower.tscn" id="2_322a4"]
+
+[node name="StructTest" type="Node2D"]
+
+[node name="ContentCow" parent="." instance=ExtResource("1_heb3b")]
+
+[node name="PhoneTower" parent="." instance=ExtResource("2_322a4")]
