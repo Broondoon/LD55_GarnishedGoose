@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0576dp8n2kqg"]
+
+[ext_resource type="Texture2D" uid="uid://cv3yfqcc2s5wr" path="res://assets/structures/cloutar.png" id="1_yjda3"]
+
+[node name="Cloutar" type="Sprite2D"]
+position = Vector2(781, 141)
+texture = ExtResource("1_yjda3")

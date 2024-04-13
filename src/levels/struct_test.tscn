@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3txgu7buvfjf"]
+[gd_scene load_steps=5 format=3 uid="uid://b3txgu7buvfjf"]
 
 [ext_resource type="PackedScene" uid="uid://b5plvi2qyjlr4" path="res://src/structures/content_cow.tscn" id="1_heb3b"]
 [ext_resource type="PackedScene" uid="uid://da01nyox3t7xi" path="res://src/structures/phone_tower.tscn" id="2_322a4"]
+[ext_resource type="PackedScene" uid="uid://c0576dp8n2kqg" path="res://src/structures/cloutar.tscn" id="3_6kstt"]
+[ext_resource type="PackedScene" uid="uid://dtx5yhw5yxley" path="res://src/manipulatables/minions/minion.tscn" id="4_pogvh"]
 
 [node name="StructTest" type="Node2D"]
 
 [node name="ContentCow" parent="." instance=ExtResource("1_heb3b")]
+position = Vector2(193, 231)
 
 [node name="PhoneTower" parent="." instance=ExtResource("2_322a4")]
+
+[node name="Cloutar" parent="." instance=ExtResource("3_6kstt")]
+
+[node name="Minion" parent="." instance=ExtResource("4_pogvh")]
+position = Vector2(391, 423)
