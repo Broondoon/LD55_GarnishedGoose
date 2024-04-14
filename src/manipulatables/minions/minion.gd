@@ -6,20 +6,47 @@ extends CharacterBody2D
 
 #I do not know what layers we need to use for the floor and the walls etc of the game 
 
-const SPEED = 50
+const SPEED: int = 150 
 
 @export var mouse_location: Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
+@onready var stop_timer = $StopTimer
+
+var selected: bool =  false
+var target: Vector2 = Vector2.ZERO
+var target_max: int = 1
+
+const MOVE_THRESHOLD: float = 0.5
+var last_position= Vector2.ZERO
+
+func _ready():
+	target = position
 
 func _physics_process(_delta: float) -> void:
-	var dir = to_local(nav_agent.get_next_path_position()).normalized()
-	velocity = dir * SPEED
-	move_and_slide()
-	
-func make_path() -> void:
-	nav_agent.target_position = get_global_mouse_position()
-	# Will implement the stuff for getting the mouse position only on click
-	# Will try to make this modular too, so that the code will know what layer it clicked on and react dependingly
+	velocity = Vector2.ZERO
+	if (position.distance_to(target) > target_max):
+		velocity = position.direction_to(target) * SPEED 
 
-func _on_timer_timeout():
-	make_path()
+	if (get_slide_collision_count() and stop_timer.is_stopped()):
+		stop_timer.start()
+		last_position = position
+	move_and_slide()
+
+
+func move_to(tar):
+	target = tar
+
+func select():
+	selected = true
+	$"Sprite(Placeholder)/Selector".visible = true
+	
+func deselect():
+	selected = false
+	$"Sprite(Placeholder)/Selector".visible = false
+	
+
+func _on_stop_timer_timeout():
+	if get_slide_collision_count():
+		if (last_position.distance_to(target) < position.distance_to(target) + MOVE_THRESHOLD):
+			target = position
+	
