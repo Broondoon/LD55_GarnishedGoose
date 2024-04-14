@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://da01nyox3t7xi"]
+[gd_scene load_steps=3 format=3 uid="uid://da01nyox3t7xi"]
 
-[ext_resource type="Texture2D" uid="uid://chvdjktndjjm4" path="res://assets/structures/phone tower.png" id="1_55si4"]
+[ext_resource type="Texture2D" uid="uid://egvg5i1jpka6" path="res://assets/structures/phone tower.png" id="1_55si4"]
+[ext_resource type="Script" path="res://src/structures/phone_tower.gd" id="2_su7u7"]
 
 [node name="PhoneTower" type="Sprite2D"]
 position = Vector2(454, 196)
 texture = ExtResource("1_55si4")
+script = ExtResource("2_su7u7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

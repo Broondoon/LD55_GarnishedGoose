@@ -1,26 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqoh5pufm7sqc"]
 
 [ext_resource type="Script" path="res://src/manipulatables/minions/game_logic_minion.gd" id="1_yoqbs"]
-[ext_resource type="PackedScene" uid="uid://dtx5yhw5yxley" path="res://src/manipulatables/minions/minion.tscn" id="2_vw45s"]
+[ext_resource type="PackedScene" uid="uid://dtx5yhw5yxley" path="res://src/manipulatables/minions/minion.tscn" id="2_e7rb6"]
 [ext_resource type="Script" path="res://src/levels/SelectDraw.gd" id="3_1yrem"]
 
 [node name="Grid" type="Node2D"]
 script = ExtResource("1_yoqbs")
 
-[node name="TileMap" type="TileMap" parent="."]
-format = 2
-
-[node name="Minion" parent="." instance=ExtResource("2_vw45s")]
-position = Vector2(612, 137)
-
-[node name="Minion2" parent="." instance=ExtResource("2_vw45s")]
-position = Vector2(481, 188)
-
-[node name="Minion3" parent="." instance=ExtResource("2_vw45s")]
-position = Vector2(494, 257)
-
-[node name="Minion4" parent="." instance=ExtResource("2_vw45s")]
-position = Vector2(587, 259)
+[node name="Minion" parent="." instance=ExtResource("2_e7rb6")]
 
 [node name="SelectDraw" type="Node2D" parent="."]
 script = ExtResource("3_1yrem")

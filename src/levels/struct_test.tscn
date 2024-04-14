@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3txgu7buvfjf"]
+[gd_scene load_steps=9 format=3 uid="uid://b3txgu7buvfjf"]
 
 [ext_resource type="PackedScene" uid="uid://b5plvi2qyjlr4" path="res://src/structures/content_cow.tscn" id="1_heb3b"]
+[ext_resource type="PackedScene" uid="uid://cqoh5pufm7sqc" path="res://src/levels/grid.tscn" id="1_jnfk4"]
 [ext_resource type="PackedScene" uid="uid://da01nyox3t7xi" path="res://src/structures/phone_tower.tscn" id="2_322a4"]
-[ext_resource type="PackedScene" uid="uid://c0576dp8n2kqg" path="res://src/structures/cloutar.tscn" id="3_6kstt"]
+[ext_resource type="PackedScene" uid="uid://c524d33hfr8ue" path="res://src/structures/cloutar.tscn" id="3_6kstt"]
 [ext_resource type="PackedScene" uid="uid://dtx5yhw5yxley" path="res://src/manipulatables/minions/minion.tscn" id="4_pogvh"]
-[ext_resource type="Texture2D" uid="uid://c63efxxn8rm4s" path="res://icon.svg" id="5_3idwf"]
+[ext_resource type="Texture2D" uid="uid://la5jpin5lf3p" path="res://icon.svg" id="5_3idwf"]
 [ext_resource type="Script" path="res://src/temp_dev/Icon.gd" id="6_wrgoc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpedt"]
@@ -22,8 +23,11 @@ position = Vector2(193, 231)
 [node name="Minion" parent="." instance=ExtResource("4_pogvh")]
 position = Vector2(254, 334)
 
+[node name="Grid" parent="." instance=ExtResource("1_jnfk4")]
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(317, 507)
+collision_mask = 0
 
 [node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("5_3idwf")
