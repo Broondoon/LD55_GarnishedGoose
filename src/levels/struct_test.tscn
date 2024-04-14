@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3txgu7buvfjf"]
+[gd_scene load_steps=8 format=3 uid="uid://b3txgu7buvfjf"]
 
 [ext_resource type="PackedScene" uid="uid://b5plvi2qyjlr4" path="res://src/structures/content_cow.tscn" id="1_heb3b"]
 [ext_resource type="PackedScene" uid="uid://da01nyox3t7xi" path="res://src/structures/phone_tower.tscn" id="2_322a4"]
 [ext_resource type="PackedScene" uid="uid://c0576dp8n2kqg" path="res://src/structures/cloutar.tscn" id="3_6kstt"]
 [ext_resource type="PackedScene" uid="uid://dtx5yhw5yxley" path="res://src/manipulatables/minions/minion.tscn" id="4_pogvh"]
+[ext_resource type="Texture2D" uid="uid://c63efxxn8rm4s" path="res://icon.svg" id="5_3idwf"]
+[ext_resource type="Script" path="res://src/temp_dev/Icon.gd" id="6_wrgoc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpedt"]
+size = Vector2(151, 136)
 
 [node name="StructTest" type="Node2D"]
 
@@ -15,4 +20,15 @@ position = Vector2(193, 231)
 [node name="Cloutar" parent="." instance=ExtResource("3_6kstt")]
 
 [node name="Minion" parent="." instance=ExtResource("4_pogvh")]
-position = Vector2(391, 423)
+position = Vector2(254, 334)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(317, 507)
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("5_3idwf")
+script = ExtResource("6_wrgoc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(5.5, 4)
+shape = SubResource("RectangleShape2D_mpedt")
